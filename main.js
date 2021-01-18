@@ -70,7 +70,29 @@ const clickMixMenu = (e) => {
   menuElement.innerHTML = `ET BAH VOILÀ : <br> <h3>${randomMenu}</h3>`;
 };
 
-
-
 homeLink.addEventListener('click', clickHome);
 menuLink.addEventListener('click', clickMenu);
+
+/*******************
+ * EXIT POPUP
+********************** */
+
+
+const exitPopUpElement = document.getElementById('exit-pop-up');
+const greyBackgroundPopElement = document.getElementById('bg-out');
+
+const closePopup = () => {
+  exitPopUpElement.style.display = 'none';
+  greyBackgroundPopElement.style.width = '0';
+  greyBackgroundPopElement.style.height = '0';
+};
+
+document.body.addEventListener('mouseleave', () => {
+  greyBackgroundPopElement.style.opacity = '0.5';
+  greyBackgroundPopElement.style.width = `100%`;
+  greyBackgroundPopElement.style.height = `100%`;
+  exitPopUpElement.style.display = 'block';
+  
+  const closePopupElement = document.getElementById('closePopup');
+  closePopupElement.addEventListener('click', closePopup);
+});
