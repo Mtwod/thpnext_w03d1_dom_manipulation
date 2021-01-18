@@ -89,8 +89,8 @@ const closePopup = () => {
 
 document.body.addEventListener('mouseleave', () => {
   greyBackgroundPopElement.style.opacity = '0.5';
-  greyBackgroundPopElement.style.width = `100%`;
-  greyBackgroundPopElement.style.height = `100%`;
+  greyBackgroundPopElement.style.width = `${document.body.clientWidth}px`;
+  greyBackgroundPopElement.style.height = `${document.body.clientHeight}px`;
   exitPopUpElement.style.display = 'block';
   
   const closePopupElement = document.getElementById('closePopup');
